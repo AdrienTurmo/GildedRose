@@ -63,12 +63,12 @@ public class GildedRoseTest {
     }
 
     @Test
-    public void sulfura_should_never_change_in_sell_or_quality() throws Exception {
-        Item sulfura = new Item("Sulfuras, Hand of Ragnaros", 5, 50);
+    public void sulfura_should_never_change_in_sell_and_its_quality_is_always_80() throws Exception {
+        Item sulfura = new Item("Sulfuras, Hand of Ragnaros", 5, 80);
         Item[] items = new Item[] {sulfura};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertThat(sulfura.toString()).isEqualTo("Sulfuras, Hand of Ragnaros, 5, 50");
+        assertThat(sulfura.toString()).isEqualTo("Sulfuras, Hand of Ragnaros, 5, 80");
     }
 
     @Test
