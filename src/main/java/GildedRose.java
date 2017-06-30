@@ -13,9 +13,8 @@ public class GildedRose {
     List<ItemForAdventurer> itemTosell;
 
     public GildedRose(Item[] items) {
-
         itemTosell = Arrays.stream(items)
-                .map(ItemForAdventurer::new)
+                .map(Mapper::CreateItemAdventurerFrom)
                 .collect(Collectors.toList());
 
         this.items = items;
