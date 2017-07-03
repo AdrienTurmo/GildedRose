@@ -1,11 +1,10 @@
 package itemforadventurer;
 
 public class Sulfuras extends ItemForAdventurer {
+    private static final int SULFURAS_QUALITY = 80;
 
-
-
-    public Sulfuras(int sellIn, int quality) {
-        super(sellIn, quality);
+    public Sulfuras(int sellIn) {
+        super(sellIn, SULFURAS_QUALITY);
     }
 
     @Override

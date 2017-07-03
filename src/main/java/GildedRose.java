@@ -7,10 +7,10 @@ import java.util.stream.Collectors;
 class GildedRose {
 
     private Item[] items;
-    private List<ItemForAdventurer> itemTosell;
+    private List<ItemForAdventurer> itemsToSell;
 
     GildedRose(Item[] items) {
-        itemTosell = Arrays.stream(items)
+        itemsToSell = Arrays.stream(items)
                 .map(Mapper::CreateItemAdventurerFrom)
                 .collect(Collectors.toList());
 
@@ -20,12 +20,12 @@ class GildedRose {
     void updateQuality() {
         for (int index = 0; index < items.length; index++) {
             Item item = items[index];
-            ItemForAdventurer itemForAdventurer = itemTosell.get(index);
+            ItemForAdventurer itemForAdventurer = itemsToSell.get(index);
 
             itemForAdventurer.aDayHasPassed();
             itemForAdventurer.updateQuality();
-            Mapper.updateItemFromItemForAdventurer(item, itemForAdventurer);
 
+            Mapper.updateItemFromItemForAdventurer(item, itemForAdventurer);
         }
     }
 
