@@ -12,6 +12,9 @@ public class ItemForAdventurer {
 
     public void updateQuality() {
         decreaseQuality();
+        if (hasExpired()) {
+            decreaseQuality();
+        }
     }
 
     public void updateDaysLeftToSell() {
@@ -27,6 +30,7 @@ public class ItemForAdventurer {
             quality++;
         }
     }
+
     public void decreaseQuality(){
         if (quality > MINIMUM_QUALITY) {
             quality--;

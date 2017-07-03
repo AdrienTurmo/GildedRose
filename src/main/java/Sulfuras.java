@@ -1,5 +1,7 @@
 public class Sulfuras extends ItemForAdventurer {
 
+
+
     public Sulfuras(int sellIn, int quality) {
         super(sellIn, quality);
     }
