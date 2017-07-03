@@ -14,7 +14,7 @@ public class Sulfuras extends ItemForAdventurer {
     }
 
     @Override
-    public void updateDaysLeftToSell() {
+    public void aDayHasPassed() {
 
     }
 }

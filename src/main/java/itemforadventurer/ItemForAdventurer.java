@@ -19,7 +19,7 @@ public class ItemForAdventurer {
         }
     }
 
-    public void updateDaysLeftToSell() {
+    public void aDayHasPassed() {
         daysLeftToSell--;
     }
 
@@ -41,7 +41,7 @@ public class ItemForAdventurer {
         }
     }
 
-    private void decreaseQuality(){
+    void decreaseQuality(){
         if (quality > MINIMUM_QUALITY) {
             quality--;
         }

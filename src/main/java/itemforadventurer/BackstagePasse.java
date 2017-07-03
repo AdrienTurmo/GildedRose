@@ -12,18 +12,16 @@ public class BackstagePasse extends ItemForAdventurer {
 
     @Override
     public void updateQuality() {
-        if (this.getDaysLeftToSell() > FIRST_TRESHOLD) {
+        super.increaseQuality();
+
+        if (this.getDaysLeftToSell() <= FIRST_TRESHOLD) {
             super.increaseQuality();
         }
-        if (this.getDaysLeftToSell() <= FIRST_TRESHOLD && this.getDaysLeftToSell() > SECOND_TRESHOLD) {
-            super.increaseQuality();
-            super.increaseQuality();
-        }
-        if (this.getDaysLeftToSell() <= SECOND_TRESHOLD && !hasExpired()) {
-            super.increaseQuality();
-            super.increaseQuality();
+
+        if (this.getDaysLeftToSell() <= SECOND_TRESHOLD) {
             super.increaseQuality();
         }
+
         if (hasExpired()) {
             setToMinimumQuality();
         }
