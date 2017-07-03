@@ -9,15 +9,20 @@ public class Mapper {
 
     public static ItemForAdventurer CreateItemAdventurerFrom(Item item) {
         if (Objects.equals(item.name, AGED_BRIE)) {
-            return new AgedBrie(item.name,item.sellIn,item.quality);
+            return new AgedBrie(item.sellIn,item.quality);
         }
         if (Objects.equals(item.name, BACKSTAGE_PASSES)) {
-            return new BackstagePasse(item.name,item.sellIn,item.quality);
+            return new BackstagePasse(item.sellIn,item.quality);
         }
         if (Objects.equals(item.name, SULFURAS_HAND_OF_RAGNAROS)) {
-            return new Sulfuras(item.name,item.sellIn,SULFURAS_QUALITY);
+            return new Sulfuras(item.sellIn,SULFURAS_QUALITY);
         }
-        return new ItemForAdventurer(item.name,item.sellIn,item.quality);
+        return new ItemForAdventurer(item.sellIn,item.quality);
+    }
+
+    public static void updateItemFromItemForAdventurer(Item item, ItemForAdventurer itemForAdventurer) {
+        item.sellIn = itemForAdventurer.getDaysLeftToSell();
+        item.quality = itemForAdventurer.getQuality();
     }
 
 }

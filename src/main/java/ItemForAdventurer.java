@@ -1,20 +1,46 @@
 public class ItemForAdventurer {
 
-    private String name;
+    private static final int MAXIMUM_QUALITY = 50;
+    private static final int MINIMUM_QUALITY = 0;
     private int daysLeftToSell;
     private int quality;
 
-    public ItemForAdventurer(String name, int sellIn, int quality) {
-        this.name = name;
+    public ItemForAdventurer(int sellIn, int quality) {
         this.daysLeftToSell = sellIn;
         this.quality = quality;
     }
 
     public void updateQuality() {
-
     }
 
     public void updateDaysLeftToSell() {
+        daysLeftToSell--;
+    }
 
+    public boolean hasExpired() {
+        return daysLeftToSell < 0;
+    }
+
+    public boolean hasMaximumQuality(){
+        return quality == MAXIMUM_QUALITY;
+    }
+
+    public void increaseQuality(){
+        if (quality < MAXIMUM_QUALITY) {
+            quality++;
+        }
+    }
+    public void decreaseQuality(){
+        if (quality > MINIMUM_QUALITY) {
+            quality--;
+        }
+    }
+
+    public int getDaysLeftToSell() {
+        return daysLeftToSell;
+    }
+
+    public int getQuality() {
+        return quality;
     }
 }

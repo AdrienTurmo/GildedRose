@@ -23,10 +23,13 @@ public class GildedRose {
     public void updateQuality() {
         for (int index = 0; index < items.length; index++) {
             Item item = items[index];
+            ItemForAdventurer itemForAdventurer = itemTosell.get(index);
 
             switch (item.name) {
                 case AGED_BRIE:
-                    agedBrieBehavior(item);
+                    itemForAdventurer.updateDaysLeftToSell();
+                    itemForAdventurer.updateQuality();
+                    Mapper.updateItemFromItemForAdventurer(item, itemForAdventurer);
 
                     break;
                 case BACKSTAGE_PASSES:
@@ -34,8 +37,9 @@ public class GildedRose {
 
                     break;
                 case SULFURAS_HAND_OF_RAGNAROS:
-                    itemTosell.get(index).updateQuality();
-                    itemTosell.get(index).updateDaysLeftToSell();
+                    itemForAdventurer.updateDaysLeftToSell();
+                    itemForAdventurer.updateQuality();
+                    Mapper.updateItemFromItemForAdventurer(item, itemForAdventurer);
 
                     break;
                 default:
@@ -43,6 +47,7 @@ public class GildedRose {
 
                     break;
             }
+
         }
     }
 
