@@ -1,3 +1,4 @@
+import itemforadventurer.GildedRose;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -64,11 +65,11 @@ public class GildedRoseTest {
 
     @Test
     public void sulfura_should_never_change_in_sell_and_its_quality_is_always_80() throws Exception {
-        Item sulfura = new Item("Sulfuras, Hand of Ragnaros", 5, 80);
+        Item sulfura = new Item("itemforadventurer.Sulfuras, Hand of Ragnaros", 5, 80);
         Item[] items = new Item[] {sulfura};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertThat(sulfura.toString()).isEqualTo("Sulfuras, Hand of Ragnaros, 5, 80");
+        assertThat(sulfura.toString()).isEqualTo("itemforadventurer.Sulfuras, Hand of Ragnaros, 5, 80");
     }
 
     @Test

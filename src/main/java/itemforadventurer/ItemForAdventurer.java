@@ -1,3 +1,5 @@
+package itemforadventurer;
+
 public class ItemForAdventurer {
 
     private static final int MAXIMUM_QUALITY = 50;
@@ -21,31 +23,31 @@ public class ItemForAdventurer {
         daysLeftToSell--;
     }
 
-    public boolean hasExpired() {
-        return daysLeftToSell < 0;
-    }
-
-    public void increaseQuality(){
-        if (quality < MAXIMUM_QUALITY) {
-            quality++;
-        }
-    }
-
-    public void decreaseQuality(){
-        if (quality > MINIMUM_QUALITY) {
-            quality--;
-        }
-    }
-
-    public void setToMinimumQuality() {
-        quality = MINIMUM_QUALITY;
-    }
-
     public int getDaysLeftToSell() {
         return daysLeftToSell;
     }
 
     public int getQuality() {
         return quality;
+    }
+
+    boolean hasExpired() {
+        return daysLeftToSell < 0;
+    }
+
+    void increaseQuality(){
+        if (quality < MAXIMUM_QUALITY) {
+            quality++;
+        }
+    }
+
+    private void decreaseQuality(){
+        if (quality > MINIMUM_QUALITY) {
+            quality--;
+        }
+    }
+
+    void setToMinimumQuality() {
+        quality = MINIMUM_QUALITY;
     }
 }

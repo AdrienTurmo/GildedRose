@@ -1,3 +1,5 @@
+package itemforadventurer;
+
 public class AgedBrie extends ItemForAdventurer {
 
     public AgedBrie(int sellIn, int quality) {

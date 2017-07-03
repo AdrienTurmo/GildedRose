@@ -1,3 +1,5 @@
+package itemforadventurer;
+
 public class Sulfuras extends ItemForAdventurer {
 
 
