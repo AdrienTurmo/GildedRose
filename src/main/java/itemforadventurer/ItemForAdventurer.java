@@ -3,7 +3,9 @@ package itemforadventurer;
 public class ItemForAdventurer {
 
     private static final int MAXIMUM_QUALITY = 50;
+    public static final int SELLING_LIMIT = 0;
     private static final int MINIMUM_QUALITY = 0;
+
     private int daysLeftToSell;
     private int quality;
 
@@ -32,7 +34,7 @@ public class ItemForAdventurer {
     }
 
     boolean hasExpired() {
-        return daysLeftToSell < 0;
+        return daysLeftToSell < SELLING_LIMIT;
     }
 
     void increaseQuality(){
