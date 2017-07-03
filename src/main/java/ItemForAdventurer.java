@@ -11,6 +11,7 @@ public class ItemForAdventurer {
     }
 
     public void updateQuality() {
+        decreaseQuality();
     }
 
     public void updateDaysLeftToSell() {
@@ -19,10 +20,6 @@ public class ItemForAdventurer {
 
     public boolean hasExpired() {
         return daysLeftToSell < 0;
-    }
-
-    public boolean hasMaximumQuality(){
-        return quality == MAXIMUM_QUALITY;
     }
 
     public void increaseQuality(){
@@ -34,6 +31,10 @@ public class ItemForAdventurer {
         if (quality > MINIMUM_QUALITY) {
             quality--;
         }
+    }
+
+    public void setToMinimumQuality() {
+        quality = MINIMUM_QUALITY;
     }
 
     public int getDaysLeftToSell() {

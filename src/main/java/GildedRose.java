@@ -33,7 +33,9 @@ public class GildedRose {
 
                     break;
                 case BACKSTAGE_PASSES:
-                    backstageTicketBehavior(item);
+                    itemForAdventurer.updateDaysLeftToSell();
+                    itemForAdventurer.updateQuality();
+                    Mapper.updateItemFromItemForAdventurer(item, itemForAdventurer);
 
                     break;
                 case SULFURAS_HAND_OF_RAGNAROS:
@@ -90,16 +92,4 @@ public class GildedRose {
         }
     }
 
-    private void agedBrieBehavior(Item item) {
-        if (item.quality < 50) {
-            item.quality = item.quality + 1;
-        }
-        item.sellIn = item.sellIn - 1;
-
-        if (item.sellIn < 0) {
-            if (item.quality < 50) {
-                item.quality = item.quality + 1;
-            }
-        }
-    }
 }

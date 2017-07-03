@@ -12,9 +12,4 @@ public class AgedBrie extends ItemForAdventurer {
         }
     }
 
-    @Override
-    public void updateDaysLeftToSell() {
-        super.updateDaysLeftToSell();
-    }
-
 }
