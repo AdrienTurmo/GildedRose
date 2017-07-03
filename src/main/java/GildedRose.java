@@ -4,13 +4,13 @@ import java.util.stream.Collectors;
 
 public class GildedRose {
 
-    public static final String AGED_BRIE = "Aged Brie";
-    public static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
-    public static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
+    private static final String AGED_BRIE = "Aged Brie";
+    private static final String BACKSTAGE_PASSES = "Backstage passes to a TAFKAL80ETC concert";
+    private static final String SULFURAS_HAND_OF_RAGNAROS = "Sulfuras, Hand of Ragnaros";
 
-    Item[] items;
+    private Item[] items;
 
-    List<ItemForAdventurer> itemTosell;
+    private List<ItemForAdventurer> itemTosell;
 
     public GildedRose(Item[] items) {
         itemTosell = Arrays.stream(items)
@@ -21,15 +21,27 @@ public class GildedRose {
     }
 
     public void updateQuality() {
-        for (Item item : items) {
-            if (item.name.equals(AGED_BRIE)) {
-                agedBrieBehavior(item);
-            } else if (item.name.equals(BACKSTAGE_PASSES)) {
-                backstageTicketBehavior(item);
-            } else if (item.name.equals(SULFURAS_HAND_OF_RAGNAROS)) {
-                item.quality = 80;
-            } else {
-                normalItemBehavior(item);
+        for (int index = 0; index < items.length; index++) {
+            Item item = items[index];
+
+            switch (item.name) {
+                case AGED_BRIE:
+                    agedBrieBehavior(item);
+
+                    break;
+                case BACKSTAGE_PASSES:
+                    backstageTicketBehavior(item);
+
+                    break;
+                case SULFURAS_HAND_OF_RAGNAROS:
+                    itemTosell.get(index).updateQuality();
+                    itemTosell.get(index).updateDaysLeftToSell();
+
+                    break;
+                default:
+                    normalItemBehavior(item);
+
+                    break;
             }
         }
     }

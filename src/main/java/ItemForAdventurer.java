@@ -10,5 +10,11 @@ public class ItemForAdventurer {
         this.quality = quality;
     }
 
+    public void updateQuality() {
 
+    }
+
+    public void updateDaysLeftToSell() {
+
+    }
 }

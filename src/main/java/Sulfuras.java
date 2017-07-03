@@ -4,4 +4,13 @@ public class Sulfuras extends ItemForAdventurer {
         super(name, sellIn, quality);
     }
 
+    @Override
+    public void updateQuality() {
+
+    }
+
+    @Override
+    public void updateDaysLeftToSell() {
+
+    }
 }
