@@ -1,4 +1,4 @@
-package itemforadventurer;
+import itemforadventurer.ItemForAdventurer;
 
 import java.util.Arrays;
 import java.util.List;

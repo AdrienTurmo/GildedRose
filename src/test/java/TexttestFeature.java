@@ -1,5 +1,3 @@
-import itemforadventurer.GildedRose;
-
 public class TexttestFeature {
 
     public static void main(String[] args) {
